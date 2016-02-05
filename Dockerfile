@@ -12,4 +12,4 @@ RUN apk add openssl &&\
     rm -fr ./oauth2_proxy-2.0.1.linux-amd64.go1.4.2* &&\
     apk del openssl
 
-ENTRYPOINT oauth2_proxy
+ENTRYPOINT /usr/local/bin/oauth2_proxy
