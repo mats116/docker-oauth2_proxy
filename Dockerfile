@@ -16,4 +16,9 @@ RUN apk add openssl util-linux \
 
 ENV HTTP_PORT=4180
 
-CMD  /usr/local/bin/oauth2_proxy --http-address=0.0.0.0:${HTTP_PORT} --upstream=${UPSTREAM} --client-id=${CLIENT_ID} --client-secret=${CLIENT_SECRET} --cookie-secret=$(uuidgen)
+CMD /usr/local/bin/oauth2_proxy \
+    --http-address=0.0.0.0:${HTTP_PORT} \
+    --upstream=${UPSTREAM} \
+    --client-id=${CLIENT_ID} \
+    --client-secret=${CLIENT_SECRET} \
+    --cookie-secret=$(uuidgen)
